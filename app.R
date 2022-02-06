@@ -3,9 +3,7 @@ library(dplyr)
 library(shinydashboard)
 library(googledrive)
 library(googlesheets4)
-library(shinythemes)
 library(readr)
-library(data.table)
 library(DT)
 
 # Read List of Pitchers
@@ -84,24 +82,6 @@ table_data <- data.frame(Name = as.character(), Date = as.Date(as.character()), 
                          check.names = F)
 # Server running App
 server <- shinyServer(function(input, output) {
-    #Create Reactive to Store Data in Data Frame
-    # values <- eventReactive(input$save, {
-    #     Name <- as.character(input$name)
-    #     OverallPain <- as.integer(input$pain)
-    #     FrontShoulder <- as.integer(input$shoulder1)
-    #     BackShoulder <- as.integer(input$Shoulder2)
-    #     Elbow <- as.integer(input$elbow)
-    #     Bicep <- as.integer(input$bicep)
-    #     Tricep <- as.integer(input$tricep)
-    #     Forearm <- as.integer(input$forearm)
-    #     Lat <- as.integer(input$lat)
-    #     
-    #     values_bind <- cbind(Name, OverallPain, FrontShoulder, BackShoulder, Elbow, Bicep, Tricep, Forearm, Lat)
-    #     df <- data.frame(values_bind)
-    #     
-    # })
-    # output$data <- renderDataTable(values())
-    
     
     # Create Table Values for Data Table / Append New Rows
         values <- reactiveValues()
